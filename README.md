@@ -34,7 +34,9 @@ After this, I ran another scan and found a noticable reduction in vulnerabilitie
 -       Add the following keys:
       HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client
       HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server
-      Then enter the appropriate DWORD values
+      Then enter the appropriate DWORD values for each key
+          "Enabled"=dword:00000000
+              "DisabledByDefault"=dword:00000001
 - Low: ICMP Timestamp Request Remote Date Disclosure.
 -       Open Group Policy Editor and navigate to: Computer Configuration > Windows Settings > Security Settings > Windows Defender Firewall with Advanced Security
 -   Create a new inbound rule: 
