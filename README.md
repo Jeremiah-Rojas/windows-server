@@ -44,6 +44,7 @@ After this, I ran another scan and found a noticable reduction in vulnerabilitie
 -     Action: Block
 -     Profile: All
 -     Name: Block ICMP Timestamp Request
+- Then follow a similar procedure to block the outgoing ICMPv4 timestamp Type 14
 
 Not all findings will be able to be remediated due to the nature of the lab.
 </br>
