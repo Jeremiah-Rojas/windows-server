@@ -9,3 +9,12 @@ In this lab I created a Windows Server 2019 Vm on Azure and installed purposely 
 </br>Note: WinRAR is a file archiver and compression utility on Windows, widely used to compress, extract, and manage archive files.
 
 </br>I then ran a credentialed Nessus scan against the machine and found the following:
+<img width="1522" height="667" alt="image" src="https://github.com/user-attachments/assets/9569fa5f-0dbb-4d1b-bf0b-5bddc2b54aec" />
+
+</br>After looking at the “Remediations” tab, I was very surprised to find only two actions that needed to be taken:
+<img width="1175" height="151" alt="image" src="https://github.com/user-attachments/assets/d4bd5249-567a-49c2-8473-6a593a45e65d" />
+
+## Remediations
+
+For the WinRAR update, I navigated to this website https://www.win-rar.com/download.html, and simply installed the more up-to-date version. By doing so, it overrides the previous version.
+<img width="1719" height="727" alt="image" src="https://github.com/user-attachments/assets/c01c35e0-260d-4570-8f59-e0a69c11af49" />
