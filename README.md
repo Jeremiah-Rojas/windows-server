@@ -22,4 +22,7 @@ For the WinRAR update, I navigated to this website https://www.win-rar.com/downl
 The other remediation is to install something called “KB5062557”; this is a windows update and is fixed by updating the system.
 <img width="1456" height="636" alt="image" src="https://github.com/user-attachments/assets/176032a5-8d3e-4692-9686-78fbd888fe56" />
 
+After this, I ran another scan and found a noticable reduction in vulnerabilities:
+<img width="1518" height="524" alt="image" src="https://github.com/user-attachments/assets/4f7acedd-7716-4500-a571-3c2a7a208b8d" />
+
 
