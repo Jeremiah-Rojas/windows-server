@@ -5,8 +5,8 @@ In this lab I created a Windows Server 2019 Vm on Azure and installed purposely 
 - Python 2.7.18
 - WinRAR 5.50
 
-</br>Note: Python can serve as a tool for automation, system management, development, data analysis, and security testing.
-</br>Note: WinRAR is a file archiver and compression utility on Windows, widely used to compress, extract, and manage archive files.
+</br>_Note: Python can serve as a tool for automation, system management, development, data analysis, and security testing._
+</br>_Note: WinRAR is a file archiver and compression utility on Windows, widely used to compress, extract, and manage archive files._
 
 </br>I then ran a credentialed Nessus scan against the machine and found the following:
 <img width="1522" height="667" alt="image" src="https://github.com/user-attachments/assets/9569fa5f-0dbb-4d1b-bf0b-5bddc2b54aec" />
