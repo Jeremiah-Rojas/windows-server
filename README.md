@@ -27,21 +27,21 @@ After this, I ran another scan and found a noticable reduction in vulnerabilitie
 
 ### Remaining Vulnerabilities (and fixes):
 - High: Add and enable registry value EnableCertPaddingCheck.
-- - Add this registry value: HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Wintrust\Config\EnableCertPaddingCheck
+-   Add this registry value: HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Wintrust\Config\EnableCertPaddingCheck
 - Medium: SMB signing not required.
-- - In Group Policy Editor, Navigate here; Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options. Then enable “Microsoft network client: Digitally sign communications (always)” and “Microsoft network server: Digitally sign communications (always).”
+-   In Group Policy Editor, Navigate here; Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options. Then enable “Microsoft network client: Digitally sign communications (always)” and “Microsoft network server: Digitally sign communications (always).”
 - Medium: TLS Version 1.0/1.1 Protocol Detection. Enable support for TLS 1.2 and 1.3, and disable support for TLS 1.0/1.1.
-- - Add the following keys:
-  - HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client
-  - HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server
-  - Then enter the appropriate DWORD values
+-   Add the following keys:
+      HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client
+      HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server
+      Then enter the appropriate DWORD values
 - Low: ICMP Timestamp Request Remote Date Disclosure. 
 - Open Group Policy Editor and navigate to: Computer Configuration > Windows Settings > Security Settings > Windows Defender Firewall with Advanced Security
-- - Create a new inbound rule: 
-- - - Type: Custom
-- - - Protocol: ICMPv4
-- - - ICMP Settings: Specific ICMP types → Timestamp Request (Type 13)
-- - - Action: Block
-- - - Profile: All
-- - - Name: Block ICMP Timestamp Request
+-   Create a new inbound rule: 
+-     Type: Custom
+-     Protocol: ICMPv4
+-     ICMP Settings: Specific ICMP types → Timestamp Request (Type 13)
+-     Action: Block
+-     Profile: All
+-     Name: Block ICMP Timestamp Request
 
