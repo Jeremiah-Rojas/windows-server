@@ -45,3 +45,6 @@ After this, I ran another scan and found a noticable reduction in vulnerabilitie
 -     Profile: All
 -     Name: Block ICMP Timestamp Request
 
+Not all findings will be able to be remediated due to the nature of the lab.
+</br>
+I rescanned the machine and found the following:
