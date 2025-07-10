@@ -18,3 +18,8 @@ In this lab I created a Windows Server 2019 Vm on Azure and installed purposely 
 
 For the WinRAR update, I navigated to this website https://www.win-rar.com/download.html, and simply installed the more up-to-date version. By doing so, it overrides the previous version.
 <img width="1719" height="727" alt="image" src="https://github.com/user-attachments/assets/c01c35e0-260d-4570-8f59-e0a69c11af49" />
+
+The other remediation is to install something called “KB5062557”; this is a windows update and is fixed by updating the system.
+<img width="1456" height="636" alt="image" src="https://github.com/user-attachments/assets/176032a5-8d3e-4692-9686-78fbd888fe56" />
+
+
