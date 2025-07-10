@@ -26,8 +26,9 @@ After this, I ran another scan and found a noticable reduction in vulnerabilitie
 <img width="1518" height="524" alt="image" src="https://github.com/user-attachments/assets/4f7acedd-7716-4500-a571-3c2a7a208b8d" />
 
 ### Remaining Vulnerabilities (and fixes):
-- High: Add and enable registry value EnableCertPaddingCheck.
+- High: Add and enable registry values EnableCertPaddingCheck.
 -       Add this registry value: HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Wintrust\Config\EnableCertPaddingCheck
+-       Add this registry value: HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Cryptography\Wintrust\Config\EnableCertPaddingCheck
 - Medium: SMB signing not required.
 -       In Group Policy Editor, Navigate here; Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options. Then enable “Microsoft network client: Digitally sign communications (always)” and “Microsoft network server: Digitally sign communications (always).”
 - Medium: TLS Version 1.0/1.1 Protocol Detection. Enable support for TLS 1.2 and 1.3, and disable support for TLS 1.0/1.1.
@@ -38,16 +39,18 @@ After this, I ran another scan and found a noticable reduction in vulnerabilitie
           "Enabled"=dword:00000000
               "DisabledByDefault"=dword:00000001
 - Low: ICMP Timestamp Request Remote Date Disclosure.
--       Open Group Policy Editor and navigate to: Computer Configuration > Windows Settings > Security Settings > Windows Defender Firewall with Advanced Security
--   Create a new inbound rule: 
--     Type: Custom
--     Protocol: ICMPv4
--     ICMP Settings: Specific ICMP types → Timestamp Request (Type 13)
--     Action: Block
--     Profile: All
--     Name: Block ICMP Timestamp Request
-- Then follow a similar procedure to block the outgoing ICMPv4 timestamp Type 14
+Run the following script:
+```
+# Block incoming ICMP Timestamp Requests (Type 13)
+New-NetFirewallRule -Name "Block_ICMP_Timestamp_Request_In" `
+  -DisplayName "Block ICMP Timestamp Request (Type 13) Inbound" `
+  -Protocol ICMPv4 -IcmpType 13 -Direction Inbound -Action Block -Profile Any
 
-Not all findings will be able to be remediated due to the nature of the lab.
+# Block outgoing ICMP Timestamp Replies (Type 14)
+New-NetFirewallRule -Name "Block_ICMP_Timestamp_Reply_Out" `
+  -DisplayName "Block ICMP Timestamp Reply (Type 14) Outbound" `
+  -Protocol ICMPv4 -IcmpType 14 -Direction Outbound -Action Block -Profile Any
+```
+_Note: Block type 13 (request) from reaching your system. Block type 14 (reply) from being sent back._
 </br>
 I rescanned the machine and found the following:
