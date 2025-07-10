@@ -54,3 +54,6 @@ New-NetFirewallRule -Name "Block_ICMP_Timestamp_Reply_Out" `
 _Note: Block type 13 (request) from reaching your system. Block type 14 (reply) from being sent back._
 </br>
 I rescanned the machine and found the following:
+
+## Conclusion
+Overall, there were more pre-existing vulnerabilities on the system than with the installation of WinRAR and python; python did not give any vulnerabilities. It is important to have an established routine scan of your servers to prevent easy fixes from building up and creating a bigger attack surface.
