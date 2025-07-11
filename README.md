@@ -55,5 +55,6 @@ _Note: Block type 13 (request) from reaching your system. Block type 14 (reply) 
 </br>
 I rescanned the machine and found the following:
 
+For the remaining low vulnerability, I created and confirmed that the necessary rules were created. But one reason the Nessus scanner may not be detecting it is because I turned of the firewalls in order to prevent them from interfering with the scan.
 ## Conclusion
 Overall, there were more pre-existing vulnerabilities on the system than with the installation of WinRAR and python; python did not give any vulnerabilities. It is important to have an established routine scan of your servers to prevent easy fixes from building up and creating a bigger attack surface.
