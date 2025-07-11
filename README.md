@@ -26,9 +26,9 @@ After this, I ran another scan and found a noticable reduction in vulnerabilitie
 <img width="1518" height="524" alt="image" src="https://github.com/user-attachments/assets/4f7acedd-7716-4500-a571-3c2a7a208b8d" />
 
 ### Remaining Vulnerabilities (and fixes):
-- High: Add and enable registry values EnableCertPaddingCheck.
--       Add this registry value: HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Wintrust\Config\EnableCertPaddingCheck
--       Add this registry value: HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Cryptography\Wintrust\Config\EnableCertPaddingCheck
+- High: Add and enable registry values EnableCertPaddingCheck (DWORD).
+-       Add this registry value: HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Wintrust\Config
+-       Add this registry value: HKEY_LOCAL_MACHINE\Software\Wow6432Node\Microsoft\Cryptography\Wintrust\Config
 - Medium: SMB signing not required.
 -       In Group Policy Editor, Navigate here; Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options. Then enable “Microsoft network client: Digitally sign communications (always)” and “Microsoft network server: Digitally sign communications (always).”
 - Medium: TLS Version 1.0/1.1 Protocol Detection. Enable support for TLS 1.2 and 1.3, and disable support for TLS 1.0/1.1.
